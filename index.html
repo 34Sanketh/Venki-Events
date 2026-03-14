@@ -47,6 +47,7 @@ nav.scrolled{background:rgba(245,240,232,.95);box-shadow:0 12px 40px rgba(44,26,
 /* ══ HERO ══ */
 #hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%}
+#hero{background:linear-gradient(160deg,var(--cream) 0%,var(--cream2) 60%,var(--parchment) 100%)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(245,240,232,.88) 0%,rgba(245,240,232,.65) 45%,rgba(44,26,14,.1) 100%);z-index:1}
 
 /* Morphing blobs */
@@ -330,10 +331,10 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
       <a href="#process" class="btn-pill btn-outline">How It Works</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="stat-num" data-count="500">0</span><span class="stat-label">Events Delivered</span></div>
-      <div class="stat-pill"><span class="stat-num" data-count="1200">0</span><span class="stat-label">Worker Network</span></div>
-      <div class="stat-pill"><span class="stat-num" data-count="98">0</span><span class="stat-label">% On-Time Rate</span></div>
-      <div class="stat-pill"><span class="stat-num" data-count="5">0</span><span class="stat-label">Years Active</span></div>
+      <div class="stat-pill"><span class="stat-num" data-count="500">500+</span><span class="stat-label">Events Delivered</span></div>
+      <div class="stat-pill"><span class="stat-num" data-count="1200">1200+</span><span class="stat-label">Worker Network</span></div>
+      <div class="stat-pill"><span class="stat-num" data-count="98">98%</span><span class="stat-label">% On-Time Rate</span></div>
+      <div class="stat-pill"><span class="stat-num" data-count="5">5+</span><span class="stat-label">Years Active</span></div>
     </div>
   </div>
   <div class="scroll-arrow"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
@@ -542,7 +543,7 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
       <div class="footer-brand"><h3>Venki<span>Events</span></h3><p>Premium event manpower for malls, hotels, and corporate venues. Trusted. Reliable. Always on time.</p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Mall Activations</a></li><li><a href="#services">Hotel & Banquet</a></li><li><a href="#services">Corporate Events</a></li><li><a href="#services">Exhibitions</a></li><li><a href="#services">Brand Promotions</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#process">How It Works</a></li><li><a href="#showcase">Our Work</a></li><li><a href="#testimonials">Clients</a></li><li><a href="#join">Join Team</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+916361556649">+91 63615 56649</a></li><li><a href="mailto:rcevents09@gmail.com">rcevents09@gmail.com</a></li><li><a href="#contact">Send Enquiry</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+916361556649">+91 63615 56649</a></li><li><a href="/cdn-cgi/l/email-protection#e89a8b8d9e8d869c9bd8d1a88f85898184c68b8785"><span class="__cf_email__" data-cfemail="285a4b4d5e4d465c5b1811684f45494144064b4745">[email&#160;protected]</span></a></li><li><a href="#contact">Send Enquiry</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 VENKI EVENTS · ALL RIGHTS RESERVED</span>
@@ -551,7 +552,7 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* CURSOR */
 const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
@@ -651,9 +652,12 @@ function countUp(el,target){
   const t=setInterval(()=>{c+=step;if(c>=target){c=target;clearInterval(t);}
   el.textContent=Math.floor(c)+(el.dataset.count==='98'?'%':'+');},16);
 }
+// Run countUp immediately so stats never show 0
+document.querySelectorAll('[data-count]').forEach(el=>countUp(el,+el.dataset.count));
+// Also on scroll for any that might be off-screen
 const co=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('[data-count]').forEach(el=>countUp(el,+el.dataset.count));co.disconnect();}});
-},{threshold:.5});
+},{threshold:.1});
 const hs=document.querySelector('.hero-stats');if(hs)co.observe(hs);
 
 /* WORKER FORM */
@@ -675,6 +679,4 @@ document.getElementById('clientForm').addEventListener('submit',function(e){
         t=document.getElementById('c-type').value,d=document.getElementById('c-date').value,
         l=document.getElementById('c-location').value,k=document.getElementById('c-count').value,
         x=document.getElementById('c-details').value;
-  const msg=`📋 *New Event Enquiry – Venki Events*\n\n*Client:* ${n}\n*Phone:* ${p}\n*Event:* ${t}\n*Date:* ${d}\n*Venue:* ${l||'TBD'}\n*Staff:* ${k||'TBD'}\n*Details:* ${x||'None'}`;
-  window.open(`https://wa.me/916361556649?text=${encodeURIComponent(msg)}`,'_blank');
-  document.getElementById('cSuccess
+  const msg=`📋 *New Event Enquiry – Venki Events*\n\n*Clien
