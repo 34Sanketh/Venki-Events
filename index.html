@@ -153,6 +153,12 @@ nav.scrolled{background:rgba(245,240,232,.95);box-shadow:0 12px 40px rgba(44,26,
 .sc-particle{position:absolute;border-radius:50%;animation:particleRise linear infinite}
 
 .sc-hover{position:absolute;inset:0;background:rgba(44,26,14,.55);border-radius:var(--r-xl);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;transition:opacity .35s ease}
+.sc-photo{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--r-xl);transition:transform .6s cubic-bezier(.34,1.2,.64,1)}
+.showcase-card:hover .sc-photo{transform:scale(1.06)}
+.sc-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(44,26,14,.75) 100%);border-radius:var(--r-xl);pointer-events:none}
+.sc-caption{position:absolute;bottom:20px;left:20px;right:20px;z-index:2}
+.sc-caption .sc-title{color:var(--cream);font-size:18px;margin-bottom:4px}
+.sc-caption .sc-label{color:rgba(245,240,232,.65)}
 .showcase-card:hover .sc-hover{opacity:1}
 .sc-hover span{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold-light)}
 
@@ -282,7 +288,7 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-<a href="https://wa.me/919999999999?text=Hi%20Venki%2C%20I%20need%20event%20manpower!" class="float-wa" target="_blank">💬</a>
+<a href="https://wa.me/916361556649?text=Hi%20Venki%2C%20I%20need%20event%20manpower!" class="float-wa" target="_blank">💬</a>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
@@ -387,50 +393,53 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
   <div class="section-header reveal">
     <div class="section-eyebrow">Our Work</div>
     <h2 class="section-title">Events We've<br><em>Brought to Life</em></h2>
-    <p class="section-sub">Replace these with your real event photos and they'll look incredible.</p>
+    <p class="section-sub">Real events. Real teams. Real results across Bengaluru and Karnataka.</p>
   </div>
   <div class="showcase-grid">
     <div class="showcase-card sc-1 reveal-s">
-      <div class="sc-inner sc-inner-1">
-        <div class="sc-particles" id="sp1"></div>
-        <div class="sc-icon">🏪</div>
-        <div class="sc-title">Mall Activations & Brand Launches</div>
-        <div class="sc-label">Add Your Photos Here</div>
+      <img class="sc-photo" src="7931.jpg" alt="Corporate Event - ET Now Global Capability Centers">
+      <div class="sc-overlay"></div>
+      <div class="sc-caption">
+        <div class="sc-title">Corporate Conferences</div>
+        <div class="sc-label">ET Now · Global Capability Centers</div>
       </div>
-      <div class="sc-hover"><span>Mall Events</span><span style="font-size:12px;opacity:.7;font-style:normal;font-family:'Space Mono',monospace;letter-spacing:1px">TAP TO VIEW</span></div>
+      <div class="sc-hover"><span>Corporate Events</span></div>
     </div>
     <div class="showcase-card sc-2 reveal-s">
-      <div class="sc-inner sc-inner-2">
-        <div class="sc-particles" id="sp2"></div>
-        <div class="sc-icon">🏨</div>
-        <div class="sc-title">Hotel & Banquet Staffing</div>
-        <div class="sc-label">Premium Venues</div>
+      <img class="sc-photo" src="7934.jpg" alt="Hostess - Ballari Wedding Event">
+      <div class="sc-overlay"></div>
+      <div class="sc-caption">
+        <div class="sc-title">Wedding Hostess</div>
+        <div class="sc-label">Ballari · Marriage Events</div>
       </div>
-      <div class="sc-hover"><span>Hotel Events</span></div>
+      <div class="sc-hover"><span>Wedding Events</span></div>
     </div>
     <div class="showcase-card sc-3 reveal-s">
-      <div class="sc-inner sc-inner-3">
-        <div class="sc-icon">🏢</div>
-        <div class="sc-title">Corporate Conferences</div>
-        <div class="sc-label">High-Profile Events</div>
+      <img class="sc-photo" src="7937.jpg" alt="Sports Event - Marathon Volunteers">
+      <div class="sc-overlay"></div>
+      <div class="sc-caption">
+        <div class="sc-title">Sports & Marathon</div>
+        <div class="sc-label">Bengaluru · Field Teams</div>
       </div>
-      <div class="sc-hover"><span>Corporate</span></div>
+      <div class="sc-hover"><span>Sports Events</span></div>
     </div>
     <div class="showcase-card sc-4 reveal-s">
-      <div class="sc-inner sc-inner-4">
-        <div class="sc-icon">💍</div>
-        <div class="sc-title">Weddings & Social Functions</div>
-        <div class="sc-label">Special Occasions</div>
+      <img class="sc-photo" src="7940.jpg" alt="Catering Team - RC Events Management">
+      <div class="sc-overlay"></div>
+      <div class="sc-caption">
+        <div class="sc-title">Catering & Banquet Staff</div>
+        <div class="sc-label">Bengaluru · Premium Events</div>
       </div>
-      <div class="sc-hover"><span>Weddings</span></div>
+      <div class="sc-hover"><span>Catering Events</span></div>
     </div>
     <div class="showcase-card sc-5 reveal-s">
-      <div class="sc-inner sc-inner-5">
-        <div class="sc-icon">🎯</div>
-        <div class="sc-title">Brand Promotions & BTL</div>
-        <div class="sc-label">Field Activations</div>
+      <img class="sc-photo" src="7932.jpg" alt="Promotion Activities">
+      <div class="sc-overlay"></div>
+      <div class="sc-caption">
+        <div class="sc-title">Brand Promotions</div>
+        <div class="sc-label">Chhabria & Sons · 50th Anniversary</div>
       </div>
-      <div class="sc-hover"><span>Promotions</span></div>
+      <div class="sc-hover"><span>Brand Activations</span></div>
     </div>
   </div>
 </section>
@@ -494,11 +503,11 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
       <h2 class="section-title">Let's Make Your<br><em>Event Flawless</em></h2>
       <p class="section-sub">Share your requirements — we respond within 2 hours.</p>
       <div class="contact-cards">
-        <a href="tel:+919999999999" class="contact-card"><div class="cc-icon">📱</div><div><span class="cc-label">Call / WhatsApp</span><span class="cc-value">+91 99999 99999</span></div></a>
-        <a href="mailto:venkievents@gmail.com" class="contact-card"><div class="cc-icon">📧</div><div><span class="cc-label">Email</span><span class="cc-value">venkievents@gmail.com</span></div></a>
+        <a href="tel:+916361556649" class="contact-card"><div class="cc-icon">📱</div><div><span class="cc-label">Call / WhatsApp</span><span class="cc-value">+91 63615 56649</span></div></a>
+        <a href="/cdn-cgi/l/email-protection#186e7d7673717d6e7d766c6b587f75797174367b7775" class="contact-card"><div class="cc-icon">📧</div><div><span class="cc-label">Email</span><span class="cc-value"><span class="__cf_email__" data-cfemail="275142494c4e42514249535467404a464e4b0944484a">[email&#160;protected]</span></span></div></a>
         <div class="contact-card"><div class="cc-icon">📍</div><div><span class="cc-label">City</span><span class="cc-value">Bengaluru, Karnataka</span></div></div>
       </div>
-      <a href="https://wa.me/919999999999?text=Hi%20Venki%2C%20I%20need%20event%20manpower!" class="wa-btn" target="_blank">💬 Chat on WhatsApp</a>
+      <a href="https://wa.me/916361556649?text=Hi%20Venki%2C%20I%20need%20event%20manpower!" class="wa-btn" target="_blank">💬 Chat on WhatsApp</a>
     </div>
     <div class="reveal-r">
       <div class="form-card">
@@ -533,7 +542,7 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
       <div class="footer-brand"><h3>Venki<span>Events</span></h3><p>Premium event manpower for malls, hotels, and corporate venues. Trusted. Reliable. Always on time.</p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services">Mall Activations</a></li><li><a href="#services">Hotel & Banquet</a></li><li><a href="#services">Corporate Events</a></li><li><a href="#services">Exhibitions</a></li><li><a href="#services">Brand Promotions</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#process">How It Works</a></li><li><a href="#showcase">Our Work</a></li><li><a href="#testimonials">Clients</a></li><li><a href="#join">Join Team</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919999999999">+91 99999 99999</a></li><li><a href="mailto:venkievents@gmail.com">venkievents@gmail.com</a></li><li><a href="#contact">Send Enquiry</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+916361556649">+91 63615 56649</a></li><li><a href="mailto:rcevents09@gmail.com">rcevents09@gmail.com</a></li><li><a href="#contact">Send Enquiry</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 VENKI EVENTS · ALL RIGHTS RESERVED</span>
@@ -542,7 +551,7 @@ footer{background:var(--brown-dark);padding:64px 24px 32px;border-radius:var(--r
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* CURSOR */
 const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
@@ -654,7 +663,7 @@ document.getElementById('workerForm').addEventListener('submit',function(e){
         c=document.getElementById('w-city').value,r=document.getElementById('w-role').value,
         x=document.getElementById('w-exp').value;
   const msg=`🙋 *New Worker Application – Venki Events*\n\n*Name:* ${n}\n*Phone:* ${p}\n*City:* ${c}\n*Role:* ${r||'Any'}\n*Experience:* ${x||'Not provided'}`;
-  window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`,'_blank');
+  window.open(`https://wa.me/916361556649?text=${encodeURIComponent(msg)}`,'_blank');
   document.getElementById('wSuccess').style.display='block';this.reset();
   setTimeout(()=>document.getElementById('wSuccess').style.display='none',6000);
 });
@@ -667,15 +676,5 @@ document.getElementById('clientForm').addEventListener('submit',function(e){
         l=document.getElementById('c-location').value,k=document.getElementById('c-count').value,
         x=document.getElementById('c-details').value;
   const msg=`📋 *New Event Enquiry – Venki Events*\n\n*Client:* ${n}\n*Phone:* ${p}\n*Event:* ${t}\n*Date:* ${d}\n*Venue:* ${l||'TBD'}\n*Staff:* ${k||'TBD'}\n*Details:* ${x||'None'}`;
-  window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`,'_blank');
-  document.getElementById('cSuccess').style.display='block';this.reset();
-  setTimeout(()=>document.getElementById('cSuccess').style.display='none',6000);
-});
-
-/* SMOOTH SCROLL */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});
-});
-</script>
-</body>
-</html>
+  window.open(`https://wa.me/916361556649?text=${encodeURIComponent(msg)}`,'_blank');
+  document.getElementById('cSuccess
